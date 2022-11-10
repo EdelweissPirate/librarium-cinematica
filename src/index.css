@@ -186,7 +186,7 @@ input[type="submit"]:hover {
 
 .fadeIn {
   opacity: 0;
-  animation: fade-in 1s linear 1s forwards;
+  animation: fade-in 1s linear forwards;
 }
 
 .glow {
