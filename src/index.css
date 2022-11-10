@@ -1,0 +1,260 @@
+/* :root { */
+  /* --mobius-blue: #003a63;  */
+  /* 15435e */
+/* } */
+
+@font-face {
+  font-family: 'UnifrakturCook-Bold';
+  src: local('UnifrakturCook-Bold'), url(./assets/fonts/UnifrakturCook-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'MedievalSharp-Regular';
+  src: local('MedievalSharp-Regular'), url(./assets/fonts/MedievalSharp-Regular.ttf) format('truetype');
+}
+
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  font-family: 'MedievalSharp-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #666666;
+  color: #fff;
+  background-image: url(./assets/placeholders/placeholder_4.png);
+  background-repeat:repeat-y;
+  background-position: center;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  font-family: 'UnifrakturCook-Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button { 
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  height: 80px;
+  align-items: center;
+  box-shadow: 0px 1px 15px #333333;
+  background-color: #222222;
+  opacity: 0;
+  transition: opacity 1s;
+  font-size: x-large;
+}
+
+section {
+  width: 100%;
+  height: calc(100vh - 140px);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #999999;
+  background-color: #222222;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#splash {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  font-size: xx-large;
+  align-items: center;
+  padding: 4em;
+  opacity: 0;
+  animation: fade-in 1s linear forwards;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  position: relative;
+}
+
+.movie-info {
+  width: 80%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1em 0 4em 0;
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  left: calc(-50vw + 50%);
+}
+
+.container > * {
+  padding: 1em 1rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.home {
+  height: 100%;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #222222;
+  color: #fff;
+  width: 80px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-family: 'MedievalSharp-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  border-radius: 15px
+}
+
+
+input[type="submit"]:hover {
+  background-color: #282c34;
+}
+
+
+.search > input[type="text"]{
+  width: 40%;
+  min-width: 170px;
+  padding: 0 1em;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fade-in 1s linear 1s forwards;
+}
+
+.glow {
+  /* font-size: 80px; */
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes fade-in {
+  0%   {opacity: 0;}
+  25%  {opacity: 0.2;}
+  50%  {opacity: 0.5;}
+  75%  {opacity: 0.8;}
+  100% {opacity: 1;}
+}
+
+@keyframes fade-out {
+  0%   {opacity: 1;}
+  25%  {opacity: 0.8;}
+  50%  {opacity: 0.5;}
+  75%  {opacity: 0.2;}
+  100% {opacity: 0;}
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #e6e6e6, 0 0 10px #e6e6e6, 0 0 15px #fff
+  }
+  
+  to {
+    text-shadow: 0 0 10px #e6e6e6, 0 0 15px #fff, 0 0 20px #fff
+  }
+}
+
+@media screen and (min-width: 694px) and (max-width: 915px) {
+  .movie {
+    max-width: 33%;
+  }
+}
+
+@media screen and (min-width: 652px) and (max-width: 693px) {
+  .movie {
+    max-width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 651px) {
+  .movie {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  #splash {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    font-size: xx-large;
+    align-items: center;
+    padding: 0;
+    margin-top: -2em;
+  }
+}
