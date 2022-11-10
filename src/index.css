@@ -54,6 +54,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 button { 
   background: none;
   border: none;

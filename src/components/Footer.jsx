@@ -2,7 +2,7 @@
 function Footer() {
     return (
         <footer>
-            <a href="https://github.com/EdelweissPirate/librarium-cinematica">
+            <a target="_blank" rel="noreferrer" href="https://github.com/EdelweissPirate/librarium-cinematica">
                 <aside>
                     Copyright © EdelweissPirate 2022
                 </aside>
