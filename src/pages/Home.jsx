@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import Movie from "../components/Movie"
@@ -44,7 +44,9 @@ function Home() {
                     <p>{message}</p>
                     : movies ? 
                     movies.map((movie, index) => {
-                        return <Movie key={`${index}-${movie.Title}`} movie={movie} />
+                        return <Suspense fallback={null} key={`${index}-${movie.Title}`}>
+                            <Movie movie={movie} />
+                        </Suspense>
                     })
                     : <ModelViewer scale="1" modelPath={"/camera.glb"} />
                 }
