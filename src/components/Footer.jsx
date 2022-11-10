@@ -2,9 +2,11 @@
 function Footer() {
     return (
         <footer>
-            <aside>
-                Copyright © EdelweissPirate 2022
-            </aside>
+            <a href="https://github.com/EdelweissPirate/librarium-cinematica">
+                <aside>
+                    Copyright © EdelweissPirate 2022
+                </aside>
+            </a>
         </footer>
     )
 }
