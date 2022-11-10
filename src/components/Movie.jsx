@@ -6,8 +6,6 @@ import Placeholder from './shared/Placeholder'
 function Movie({ movie }) {
     const [plot, setPlot] = useState(null)
 
-    // const placeholder = 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg'
-
     const poster = movie.Poster === 'N/A' ? Placeholder() : movie.Poster
     
     const processTitle = () => {
