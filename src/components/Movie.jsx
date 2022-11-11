@@ -12,12 +12,24 @@ function Movie({ movie }) {
         return movie.Title.split(' ').join('+').toLowerCase()
     }
 
+    const truncateString = (string, length) => {
+        if(string.length > length){
+            string = string.slice(0, length-1).trim() + '...' 
+        }
+
+        return string
+    }
+
     const getPlot = async () => {
         const res = await fetch(`https://www.omdbapi.com/?t=${processTitle()}&plot=full&apikey=e1ce6612`)
             .then(async response => {return await response.json()})
             .catch(error => {return error})
-        
-        setPlot(res.Plot)
+
+        if(res.Plot){
+            const _plot = truncateString(res.Plot, 915)
+            
+            setPlot(_plot)
+        }
     }
     
     useEffect(() => {
@@ -79,7 +91,7 @@ function Movie({ movie }) {
 
             <div className='movie-info'>
                 <div style={movieTitleStyles}>
-                    <h2>{movie.Title.length > 26 ? movie.Title.slice(0, 26-1) + '...' : movie.Title}</h2>
+                    <h2>{truncateString(movie.Title, 26)}</h2>
                     <p>({movie.Year})</p>
                 </div>
 

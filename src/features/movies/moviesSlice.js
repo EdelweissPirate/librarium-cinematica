@@ -47,6 +47,9 @@ export const moviesSlice = createSlice({
             state.isError = false
             state.isSuccess = false
             state.message = ''
+        },
+        clearMovies: (state) => {
+            state.movies = null
         }
     },
     extraReducers: (builder) => {
@@ -91,5 +94,5 @@ export const moviesSlice = createSlice({
     }
 })
 
-export const { reset } = moviesSlice.actions
+export const { reset, clearMovies } = moviesSlice.actions
 export default moviesSlice.reducer

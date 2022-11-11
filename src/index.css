@@ -4,8 +4,13 @@
 }
 
 @font-face {
-  font-family: 'MedievalSharp-Regular';
-  src: local('MedievalSharp-Regular'), url(./assets/fonts/MedievalSharp-Regular.ttf) format('truetype');
+  font-family: 'Tinos-Regular';
+  src: local('Tinos-Regular'), url(./assets/fonts/Tinos-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Tinos-Bold';
+  src: local('Tinos-Bold'), url(./assets/fonts/Tinos-Bold.ttf) format('truetype');
 }
 
   
@@ -25,7 +30,7 @@ body {
   width: 100%;
   position: relative;
   min-height: 100%;
-  font-family: 'MedievalSharp-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Tinos-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,6 +56,7 @@ h1 {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -81,6 +87,7 @@ header {
 section {
   width: 100%;
   height: calc(100vh - 140px);
+  min-height: calc(100vh - 140px);
   display:flex;
   flex-direction: column;
   justify-content: space-between;
@@ -140,11 +147,12 @@ footer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 1em 0 4em 0;
+  padding: 1em 0 1em 0;
   position: relative;
   width: 100vw;
   height: 100%;
   left: calc(-50vw + 50%);
+  text-align: center;
 }
 
 .container > * {
@@ -170,7 +178,7 @@ input[type="submit"] {
   width: 80px;
   margin-left: 5px;
   cursor: pointer;
-  font-family: 'MedievalSharp-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Tinos-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   border-radius: 15px
@@ -181,6 +189,18 @@ input[type="submit"]:hover {
   background-color: #282c34;
 }
 
+.btn {
+  padding: 10px;
+  background-color: #222222;
+  color: #fff;
+  width: 80px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-family: 'Tinos-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  border-radius: 15px
+}
 
 .search > input[type="text"]{
   width: 40%;
