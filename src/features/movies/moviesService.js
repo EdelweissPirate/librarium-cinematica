@@ -11,7 +11,7 @@ const searchFilms = async (arg) => {
     return await fetch(`https://www.omdbapi.com/?s=${arg.searchValue}&apikey=e1ce6612`)
         .then(res => res.json())
         .then(resJSON => { 
-            console.log('test')
+            // console.log('test')
             return resJSON.Response ? 
                 resJSON.Search : resJSON.Error 
         })

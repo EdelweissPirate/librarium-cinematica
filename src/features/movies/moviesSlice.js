@@ -77,7 +77,7 @@ export const moviesSlice = createSlice({
             .addCase(searchFilms.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = true
-                console.log(action)
+                // console.log(action)
                 state.movies = null
                 state.movies = action.payload
             })
