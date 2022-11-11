@@ -13,14 +13,14 @@ function Search(props) {
     // }
 
     const onFocus = () => {
-        if(window.innerWidth > 500){
+        if(window.innerWidth < 500){
             const _footer = document.querySelector('footer')
             _footer.style.opacity = 0
         }
     }
 
     const onBlur = () => {
-        if(window.innerWidth > 500){
+        if(window.innerWidth < 500){
             const _footer = document.querySelector('footer')
             _footer.style.opacity = 1
         }
@@ -41,6 +41,7 @@ function Search(props) {
                 value={searchValue}
                 onChange={onChange}
                 type="text"
+                required
                 onFocus={onFocus}
                 onBlur={onBlur}
             />

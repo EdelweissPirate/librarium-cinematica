@@ -35,7 +35,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #666666;
   color: #fff;
   background-image: url(./assets/placeholders/placeholder_4.png);
@@ -135,6 +135,12 @@ footer {
   position: relative;
 }
 
+.spacer {
+  height: 1em;
+  min-height: 1em;
+  padding: 2em 0em;
+}
+
 .movie-info {
   width: 80%;
   align-self: center;
@@ -169,6 +175,7 @@ footer {
 
 .home {
   height: 100%;
+  width: 100%;
 }
 
 input[type="submit"] {

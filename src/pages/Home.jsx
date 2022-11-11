@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
-import Movie from "../components/Movie"
+import Movies from "../components/Movies"
 import Search from "../components/Search"
 import ModelViewer from "../components/ModelViewer"
 
@@ -33,14 +33,12 @@ function Home() {
     const search = searchValue => {
         dispatch(searchFilms({searchValue}))
         setPageNum(1)
-        window.scrollTo(0, 0)
+        
+        const moviesScroll = document.getElementById('movie-scroll');
+        moviesScroll?.scroll({top:0,behavior:'smooth'})
+
         dispatch(reset())
     };
-
-    const onClick = (_pageNum) => {
-        setPageNum(_pageNum)
-        window.scrollTo(0, 0)
-    }
 
     return (
         <div id="home" className='home fadeIn' >
@@ -56,35 +54,7 @@ function Home() {
                             <p>{message}</p>
                         </div>
                     : movies ? 
-                        <>
-                            <div style={{width: '100%', color: '#222222', fontSize: 'large'}}>
-                                <p>Showing results {1 + (8 * (pageNum - 1))} - {movies.length > 8 ? (7 + ((movies.length - 8) * pageNum - 1)) : movies.length}</p>
-                            </div>
-
-                            {movies.length > 8 ? 
-                                <div style={{width: '100%', margin: '1em 0 0em 0', padding: '1em 0 1em 0', display: 'flex', justifyContent: 'center'}}>
-                                    <button className="btn" onClick={() => onClick(1)}>1</button>
-                                    <button className="btn" onClick={() => onClick(2)}>2</button>
-                                </div>
-                            : null}
-
-                            {movies.map((movie, index) => {
-                                if(index >= 0 + (8 * (pageNum - 1)) && index <= 7 * pageNum){
-                                    return <Movie key={`${index}-${movie.Title}`} movie={movie} />
-                                } else {
-                                    return null
-                                }
-                            })} 
-
-                            <div style={{width: '100%', margin: '1em 0 4em 0', padding: '0em 0 5em 0', display: 'flex', justifyContent: 'center'}}>
-                                {movies.length > 8 ? 
-                                    <>
-                                        <button className="btn" onClick={() => onClick(1)}>1</button>
-                                        <button className="btn" onClick={() => onClick(2)}>2</button>
-                                    </>
-                                : null}
-                            </div>
-                        </>
+                    <Movies movies={movies} pageNum={pageNum} setPageNum={setPageNum} />
                     : <ModelViewer scale="1" modelPath={"/camera.glb"} />
                 }
             </div>

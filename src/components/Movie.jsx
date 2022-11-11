@@ -49,7 +49,7 @@ function Movie({ movie }) {
         height: '411px', //'100%',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        margin: '2em 0',
+        margin: '0em 0',
         color: '#fff',
         width: '100vw',
         position: 'relative',
