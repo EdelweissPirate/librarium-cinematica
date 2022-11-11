@@ -8,8 +8,22 @@ function Search(props) {
         setSearchValue(e.target.value);
     }
 
-    const resetInputField = () => {
-        setSearchValue("")
+    // const resetInputField = () => {
+    //     setSearchValue("")
+    // }
+
+    const onFocus = () => {
+        if(window.innerWidth > 500){
+            const _footer = document.querySelector('footer')
+            _footer.style.opacity = 0
+        }
+    }
+
+    const onBlur = () => {
+        if(window.innerWidth > 500){
+            const _footer = document.querySelector('footer')
+            _footer.style.opacity = 1
+        }
     }
 
     const onSubmit = (e) => {
@@ -27,18 +41,14 @@ function Search(props) {
                 value={searchValue}
                 onChange={onChange}
                 type="text"
+                onFocus={onFocus}
+                onBlur={onBlur}
             />
 
             <input 
-                // onClick={onSubmit} 
                 type="submit" 
                 value="SEARCH" 
             />
-            {/* <input 
-                onClick={resetInputField} 
-                type="submit" 
-                value="CLEAR" 
-            /> */}
         </form>
         );
 }
