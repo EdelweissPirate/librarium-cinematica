@@ -44,9 +44,11 @@ function Home() {
                     <p>{message}</p>
                     : movies ? 
                     movies.map((movie, index) => {
-                        return <Suspense fallback={null} key={`${index}-${movie.Title}`}>
-                            <Movie movie={movie} />
-                        </Suspense>
+                        if(index <= 7){
+                            return <Movie key={`${index}-${movie.Title}`} movie={movie} />
+                        } else {
+                            return null
+                        }
                     })
                     : <ModelViewer scale="1" modelPath={"/camera.glb"} />
                 }

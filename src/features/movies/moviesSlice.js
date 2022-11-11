@@ -5,7 +5,7 @@ const initialState = {
     movies: null,
     isError: false,
     isSuccess: false,
-    isLoading: false,
+    isLoading: true,// false,
     message: null,
 }
 

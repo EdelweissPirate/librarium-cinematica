@@ -1,6 +1,5 @@
-import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { useFrame, useLoader } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 
 function MovieAvatar(props) {
@@ -20,7 +19,6 @@ function MovieAvatar(props) {
     })
 
     //create texture
-    // const texture = useLoader(THREE.TextureLoader, props.texture)
     const texture = useTexture(props.texture)
     
     // Return the view, these are regular Threejs elements expressed in JSX
